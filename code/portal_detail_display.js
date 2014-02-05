@@ -2,23 +2,9 @@
 // main code block that renders the portal details in the sidebar and
 // methods that highlight the portal in the map view.
 
-window.disabledGUID = [];
+//window.disabledGUID = [];
 
-window.disableInFlyLinks = function(guid) {
-	if (window.disabledGUID) {
-		window.disabledGUID[guid] = true;
-		//if (window.plugin.flyLinks)
-			window.plugin.flyLinks.updateLayer();
-	}
-};
 
-window.enableInFlyLinks = function(guid) {
-	if(window.disabledGUID) {
-		delete window.disabledGUID[guid];
-		//if (window.plugin.flyLinks)
-			window.plugin.flyLinks.updateLayer();
-	}
-};
 
 window.renderPortalDetails = function(guid) {
   selectPortal(window.portals[guid] ? guid : null);
@@ -146,6 +132,7 @@ window.renderPortalDetails = function(guid) {
     linkDetails.push('<aside>'+mapHtml+'</aside>');
 	
 	
+	/***
 	
 	// a disable in fly-links function
     var mapHtml = $('<div>').html( $('<a>').attr({onclick:disableInFlyLinks, title:'Disable in Fly-Links'}).text('Disable in FL') ).html();
@@ -156,7 +143,8 @@ window.renderPortalDetails = function(guid) {
     var mapHtml = $('<div>').html( $('<a>').attr({onclick:enableInFlyLinks, title:'Disable in Fly-Links'}).text('Enable in FL') ).html();
 	if (window.plugin.flyLinks)
 		linkDetails.push('<aside>'+mapHtml+'</aside>');
-
+		
+	***/
   }
 
   $('#portaldetails')
