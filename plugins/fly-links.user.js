@@ -51,7 +51,7 @@ window.plugin.flyLinks.updateLayer = function() {
     var ll = portal.getLatLng();
     if (bounds.contains(ll)) {
       var p = map.project(portal.getLatLng(), window.plugin.flyLinks.PROJECT_ZOOM);
-	  if (!window.disabledGUID || !(guid in window.disabledGUID))
+	  if (!window.plugin.disablePortal || !(guid in window.plugin.disablePortal.disabledGUID))
 		locations.push(p);
     }
   });
